@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
 class ButtonElement extends StatelessWidget {
-  const ButtonElement({
-    Key key,
-    @required this.imageButtons,
-    @required this.titleButtons,
-  }) : super(key: key);
+  const ButtonElement(
+      {Key key,
+      @required this.imageButtons,
+      @required this.titleButtons,
+      this.handleNavigation})
+      : super(key: key);
 
   final String imageButtons;
   final String titleButtons;
+  final VoidCallback handleNavigation;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +44,7 @@ class ButtonElement extends StatelessWidget {
                     textAlign: TextAlign.center, style: TextStyle(fontSize: 13))
               ],
             ),
-            onPressed: () {},
+            onPressed: () => handleNavigation(),
           ),
         ],
       ),

@@ -1,36 +1,23 @@
 import 'package:flutter/material.dart';
-import './../widgets/home/appBar.dart';
-import './../widgets//home//buttomElement.dart';
+import '../widgets/appBar/appBar.dart';
+import '../widgets/home/buttomElement.dart';
+import 'hotLineScreens/hotLineScreen.dart';
+import 'supportedRequireScreens/supportedRequireTab.dart';
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MyHomePage(title: 'CITIZENS APP'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  MyHomePage({this.title});
+class HomeScreen extends StatelessWidget {
+  HomeScreen({this.title});
   final String title;
   final int blueColor = 0xff01A8A1, greenColor = 0xff6ECC54;
   final imageButtons = [
-    'assets/images/icons/react.png',
-    'assets/images/icons/verification.png',
-    'assets/images/icons/danger.png',
-    'assets/images/icons/place.png',
-    'assets/images/icons/camera.png',
-    'assets/images/icons/hot-line.png',
-    'assets/images/icons/sos.png'
+    'lib/assets/images/icons/react.png',
+    'lib/assets/images/icons/verification.png',
+    'lib/assets/images/icons/danger.png',
+    'lib/assets/images/icons/place.png',
+    'lib/assets/images/icons/camera.png',
+    'lib/assets/images/icons/hot-line.png',
+    'lib/assets/images/icons/sos.png'
   ];
-  final titleButtons = [
+  final List<String> titleButtons = [
     'Phản ánh \nhiện tượng',
     'Xác minh \ntin tức',
     'Thông tin \ncảnh báo',
@@ -39,28 +26,44 @@ class MyHomePage extends StatelessWidget {
     'Đường dây\nnóng',
     'Yêu cầu \nhỗ trợ'
   ];
+  final pageNavigator = [
+    HotLineScreen(title: 'Phản ánh hiện tượng'),
+    HotLineScreen(title: 'Xác minh tin tức'),
+    HotLineScreen(title: 'Thông tin cảnh báo'),
+    HotLineScreen(title: 'Bản đồ số'),
+    HotLineScreen(title: 'Camera công cộng'),
+    HotLineScreen(title: 'Đường dây nóng'),
+    SupportedRequireTab(title: 'Yêu cầu hỗ trợ')
+  ];
+
+  void handleNavigation(context, page) =>
+      Navigator.push(context, MaterialPageRoute(builder: (context) => page));
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: GradientAppBar(title: title),
+      appBar: GradientAppBarHome(title: title),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Image.asset(
-              'assets/images/brand.png',
+              'lib/assets/images/brand.png',
               width: double.infinity,
               fit: BoxFit.fitWidth,
             ),
             Padding(padding: const EdgeInsets.only(top: 30.15)),
             Wrap(
               direction: Axis.horizontal,
+              spacing: 10.0,
+              runSpacing: 20.0,
               children: <Widget>[
                 for (var i = 0; i < titleButtons.length; i++)
                   ButtonElement(
                       imageButtons: imageButtons[i],
-                      titleButtons: titleButtons[i])
+                      titleButtons: titleButtons[i],
+                      handleNavigation: () =>
+                          handleNavigation(context, pageNavigator[i]))
               ],
             ),
           ],
