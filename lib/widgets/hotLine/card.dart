@@ -55,13 +55,13 @@ class CardHotLine extends StatelessWidget {
                         Text(
                           title,
                           style: TextStyle(
-                              fontSize: 24,
+                              fontSize: 20,
                               color: Colors.white,
                               fontWeight: FontWeight.bold),
                         ),
                         Text(phone,
                             style: TextStyle(
-                                fontSize: 40,
+                                fontSize: 35,
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold))
                       ]),

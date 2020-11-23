@@ -9,13 +9,13 @@ class HomeScreen extends StatelessWidget {
   final String title;
   final int blueColor = 0xff01A8A1, greenColor = 0xff6ECC54;
   final imageButtons = [
-    'lib/assets/images/icons/react.png',
-    'lib/assets/images/icons/verification.png',
-    'lib/assets/images/icons/danger.png',
-    'lib/assets/images/icons/place.png',
-    'lib/assets/images/icons/camera.png',
-    'lib/assets/images/icons/hot-line.png',
-    'lib/assets/images/icons/sos.png'
+    'lib/assets/images/iconsHome/react.png',
+    'lib/assets/images/iconsHome/verification.png',
+    'lib/assets/images/iconsHome/danger.png',
+    'lib/assets/images/iconsHome/place.png',
+    'lib/assets/images/iconsHome/camera.png',
+    'lib/assets/images/iconsHome/hot-line.png',
+    'lib/assets/images/iconsHome/sos.png'
   ];
   final List<String> titleButtons = [
     'Phản ánh \nhiện tượng',
@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
     HotLineScreen(title: 'Bản đồ số'),
     HotLineScreen(title: 'Camera công cộng'),
     HotLineScreen(title: 'Đường dây nóng'),
-    SupportedRequireTab(title: 'Yêu cầu hỗ trợ')
+    SupportedRequireTab()
   ];
 
   void handleNavigation(context, page) =>
@@ -70,7 +70,7 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () => handleNavigation(context, SupportedRequireTab()),
         tooltip: 'sos',
         foregroundColor: Colors.white,
         backgroundColor: Color(0xffF92525),

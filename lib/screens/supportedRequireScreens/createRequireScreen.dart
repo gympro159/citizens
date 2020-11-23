@@ -1,4 +1,3 @@
-import 'package:citizens/widgets/appBar/appBar.dart';
 import 'package:flutter/material.dart';
 
 class CreateRequireScreen extends StatelessWidget {

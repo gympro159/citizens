@@ -4,9 +4,7 @@ import 'createRequireScreen.dart';
 import 'supportLocalTeamScreen.dart';
 
 class SupportedRequireTab extends StatefulWidget {
-  SupportedRequireTab({Key key, @required this.title}) : super(key: key);
-
-  final String title;
+  SupportedRequireTab({Key key}) : super(key: key);
 
   @override
   _SupportedRequireTabState createState() => _SupportedRequireTabState();
@@ -27,29 +25,59 @@ class _SupportedRequireTabState extends State<SupportedRequireTab> {
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
           type: BottomNavigationBarType.fixed,
-          iconSize: 40,
+          backgroundColor: Color(0xfff7f7f7),
+          selectedItemColor: Color(0xff10A8A1),
+          selectedFontSize: 13,
+          unselectedFontSize: 13,
           items: [
             BottomNavigationBarItem(
                 icon: Container(
-                    width: 40,
+                    width: 24,
+                    height: 24,
                     child: Center(
                       child: Text(
                         'SOS',
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.white),
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 9),
                       ),
                     ),
                     decoration: BoxDecoration(
                       color: Color(0xff727272),
-                      border: Border.all(color: Color(0xff9C9C9C), width: 1),
-                      borderRadius: BorderRadius.all(Radius.circular(30)),
+                      border: Border.all(color: Color(0xff9C9C9C), width: 2),
+                      borderRadius: BorderRadius.all(Radius.circular(24)),
                     )),
-                activeIcon: Container(child: Text('OSO')),
+                activeIcon: Container(
+                    width: 24,
+                    height: 24,
+                    child: Center(
+                      child: Text(
+                        'SOS',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 9),
+                      ),
+                    ),
+                    decoration: BoxDecoration(
+                      color: Color(0xffEF0000),
+                      border: Border.all(color: Color(0xffFF7474), width: 2),
+                      borderRadius: BorderRadius.all(Radius.circular(24)),
+                    )),
                 label: 'Gửi yêu cầu',
                 backgroundColor: Color(0xff10A8A1)),
             BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Gửi yêu cầu',
+                icon: Image.asset(
+                  'lib/assets/images/iconsSpRq/unselected.png',
+                  width: 20.0,
+                  height: 20.0,
+                ),
+                activeIcon: Image.asset(
+                    'lib/assets/images/iconsSpRq/selected.png',
+                    width: 20.0,
+                    height: 20.0),
+                label: 'Đội cứu hộ',
                 backgroundColor: Color(0xff10A8A1))
           ],
           onTap: (index) => setState(() => _currentIndex = index)),

@@ -29,6 +29,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
   url_launcher: ^5.7.10
+  http: ^0.12.2
+  bloc: ^6.1.0
   
 dev_dependencies:
   flutter_test:
@@ -39,7 +41,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -51,17 +52,19 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - lib/assets/images/brand.png
-    - lib/assets/images/icons/camera.png
-    - lib/assets/images/icons/danger.png
-    - lib/assets/images/icons/hot-line.png
-    - lib/assets/images/icons/place.png
-    - lib/assets/images/icons/react.png
-    - lib/assets/images/icons/sos.png
-    - lib/assets/images/icons/verification.png
+    - lib/assets/images/iconsHome/camera.png
+    - lib/assets/images/iconsHome/danger.png
+    - lib/assets/images/iconsHome/hot-line.png
+    - lib/assets/images/iconsHome/place.png
+    - lib/assets/images/iconsHome/react.png
+    - lib/assets/images/iconsHome/sos.png
+    - lib/assets/images/iconsHome/verification.png
     - lib/assets/images/cardsHotLine/112.png
     - lib/assets/images/cardsHotLine/113.png
     - lib/assets/images/cardsHotLine/114.png
     - lib/assets/images/cardsHotLine/115.png
+    - lib/assets/images/iconsSpRq/selected.png
+    - lib/assets/images/iconsSpRq/unselected.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
