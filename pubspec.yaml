@@ -65,7 +65,8 @@ flutter:
     - lib/assets/images/cardsHotLine/115.png
     - lib/assets/images/iconsSpRq/selected.png
     - lib/assets/images/iconsSpRq/unselected.png
-
+    - lib/assets/images/iconsSOSTeam/person.png
+    - lib/assets/images/iconsSOSTeam/call.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
