@@ -12,7 +12,6 @@ Future callApi(String endpoint,
   List data;
   var response;
   // var response;
-  print(111111111111);
   switch (method) {
     case 'GET':
       response = await http.get(url, headers: header);
