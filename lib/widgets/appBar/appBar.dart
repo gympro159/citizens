@@ -15,7 +15,7 @@ class GradientAppBarHome extends StatelessWidget
     return new AppBar(
         centerTitle: true,
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             GestureDetector(
                 onTap: () {},
@@ -29,7 +29,22 @@ class GradientAppBarHome extends StatelessWidget
                     fontSize: 20.0,
                     color: Colors.white,
                     fontWeight: FontWeight.bold)),
-            Padding(padding: EdgeInsets.only(left: 21.8)),
+            GestureDetector(
+                onTap: () {},
+                child: Stack(children: [
+                  Icon(
+                    Icons.notifications,
+                    color: Colors.white,
+                    size: 35.0,
+                  ),
+                  Positioned(
+                    // draw a red marble
+                    top: 3.0,
+                    right: 3.0,
+                    child: new Icon(Icons.brightness_1,
+                        size: 14.0, color: Colors.redAccent),
+                  )
+                ])),
           ],
         ),
         flexibleSpace: Container(

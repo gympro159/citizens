@@ -24,36 +24,45 @@ class WarningInfoDetailScreen extends StatelessWidget {
                         fontSize: 20,
                         height: 1.5)),
                 SizedBox(height: 22),
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('Chuyên mục'),
-                          Text(warningInfoDetail["type"]["nameType"],
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                  height: 1.5))
-                        ],
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('Mức độ'),
-                          Text(warningInfoDetail["rate"]["nameRate"],
-                              style: TextStyle(
-                                  color:
-                                      warningInfoDetail["rate"]["idRate"] == "1"
+                Container(
+                  width: double.infinity,
+                  child: Wrap(
+                      alignment: WrapAlignment.spaceBetween,
+                      direction: Axis.horizontal,
+                      runSpacing: 22,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Chuyên mục'),
+                            Text(warningInfoDetail["type"]["nameType"],
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                    height: 1.5))
+                          ],
+                        ),
+                        SizedBox(
+                          width: 110,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('Mức độ'),
+                              Text(warningInfoDetail["rate"]["nameRate"],
+                                  style: TextStyle(
+                                      color: warningInfoDetail["rate"]
+                                                  ["idRate"] ==
+                                              "1"
                                           ? Color(0xffFF0000)
                                           : Colors.orange,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                  height: 1.5))
-                        ],
-                      )
-                    ]),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                      height: 1.5))
+                            ],
+                          ),
+                        )
+                      ]),
+                ),
                 SizedBox(height: 22),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

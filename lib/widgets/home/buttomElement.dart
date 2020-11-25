@@ -36,7 +36,7 @@ class ButtonElement extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10)),
                     child: Container(
                       child: Image.asset(imageButtons),
-                      constraints: BoxConstraints(maxWidth: 35, maxHeight: 35),
+                      constraints: BoxConstraints(maxWidth: 40, maxHeight: 40),
                       alignment: Alignment.center,
                     )),
                 Padding(padding: const EdgeInsets.only(top: 5)),
