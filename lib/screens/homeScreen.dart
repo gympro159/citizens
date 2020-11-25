@@ -1,3 +1,4 @@
+import 'package:citizens/screens/warningInfoScreens/warningInfoMenuScreen.dart';
 import 'package:flutter/material.dart';
 import '../widgets/appBar/appBar.dart';
 import '../widgets/home/buttomElement.dart';
@@ -29,7 +30,7 @@ class HomeScreen extends StatelessWidget {
   final pageNavigator = [
     HotLineScreen(title: 'Phản ánh hiện tượng'),
     HotLineScreen(title: 'Xác minh tin tức'),
-    HotLineScreen(title: 'Thông tin cảnh báo'),
+    WarningInfoMenuScreen(title: 'Thông tin cảnh báo'),
     HotLineScreen(title: 'Bản đồ số'),
     HotLineScreen(title: 'Camera công cộng'),
     HotLineScreen(title: 'Đường dây nóng'),

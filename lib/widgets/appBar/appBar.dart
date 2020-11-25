@@ -46,11 +46,11 @@ class GradientAppBarHome extends StatelessWidget
 }
 
 class GradientAppBar extends StatelessWidget implements PreferredSizeWidget {
-  GradientAppBar({this.title});
+  GradientAppBar({this.title, this.handleIcon});
   final String title;
   final double barHeight = 50.0;
   final int blueColor = 0xff01A8A1, greenColor = 0xff6ECC54;
-
+  final Widget handleIcon;
   @override
   Size get preferredSize => Size.fromHeight(barHeight);
 
@@ -58,11 +58,24 @@ class GradientAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return new AppBar(
         centerTitle: true,
-        title: Text(title,
-            style: TextStyle(
-                fontSize: 20.0,
-                color: Colors.white,
-                fontWeight: FontWeight.bold)),
+        title: this.handleIcon == null
+            ? Text(title,
+                style: TextStyle(
+                    fontSize: 20.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold))
+            : Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  SizedBox(),
+                  Text(title,
+                      style: TextStyle(
+                          fontSize: 20.0,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold)),
+                  handleIcon
+                ],
+              ),
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(

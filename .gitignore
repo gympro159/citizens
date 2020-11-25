@@ -29,7 +29,6 @@
 .packages
 .pub-cache/
 .pub/
-.lib/constants/Config.dart
 /build/
 
 # Web related
@@ -40,3 +39,6 @@ app.*.symbols
 
 # Obfuscation related
 app.*.map.json
+
+
+lib/constants/Config.dart
