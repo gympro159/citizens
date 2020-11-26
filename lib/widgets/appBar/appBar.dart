@@ -19,11 +19,41 @@ class GradientAppBarHome extends StatelessWidget
           children: [
             GestureDetector(
                 onTap: () {},
-                child: Icon(
-                  Icons.account_circle,
-                  color: Colors.white,
-                  size: 35.0,
-                )),
+                child: Container(
+                    width: 35,
+                    height: 35,
+                    padding: EdgeInsets.symmetric(horizontal: 1.3),
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 4.0, color: Colors.white),
+                      borderRadius: BorderRadius.circular(35),
+                    ),
+                    child: Stack(
+                      children: [
+                        Positioned.fill(
+                          top: 3,
+                          child: Align(
+                            alignment: Alignment.topCenter,
+                            child: Container(
+                                width: 12,
+                                height: 12,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(10))),
+                          ),
+                        ),
+                        Positioned.fill(
+                            bottom: -26.5,
+                            child: Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Container(
+                                  width: 38,
+                                  height: 38,
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(20))),
+                            ))
+                      ],
+                    ))),
             Text(title,
                 style: TextStyle(
                     fontSize: 20.0,
