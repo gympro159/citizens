@@ -1,3 +1,7 @@
+import 'package:citizens/screens/digitalMapScreen/digitalMapScreen.dart';
+import 'package:citizens/screens/publicCameraScreen/publicCameraScreen.dart';
+import 'package:citizens/screens/reactPhenomena/reactPhenomenaScreen.dart';
+import 'package:citizens/screens/verifyNews/verifyNewsScreen.dart';
 import 'package:citizens/screens/warningInfoScreens/warningInfoMenuScreen.dart';
 import 'package:flutter/material.dart';
 import '../widgets/appBar/appBar.dart';
@@ -28,11 +32,11 @@ class HomeScreen extends StatelessWidget {
     'Yêu cầu \nhỗ trợ'
   ];
   final pageNavigator = [
-    HotLineScreen(title: 'Phản ánh hiện tượng'),
-    HotLineScreen(title: 'Xác minh tin tức'),
+    ReactPhenomenaScreen(title: 'Phản ánh hiện tượng'),
+    VerifyNewsScreen(title: 'Xác minh tin tức'),
     WarningInfoMenuScreen(title: 'Thông tin cảnh báo'),
-    HotLineScreen(title: 'Bản đồ số'),
-    HotLineScreen(title: 'Camera công cộng'),
+    DigitalMapScreen(title: 'Bản đồ số'),
+    PublicCameraScreen(title: 'Camera công cộng'),
     HotLineScreen(title: 'Đường dây nóng'),
     SupportedRequireTab()
   ];

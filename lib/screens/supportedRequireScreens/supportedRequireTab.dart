@@ -17,12 +17,21 @@ class _SupportedRequireTabState extends State<SupportedRequireTab> {
 
   final title = ['Tạo yêu cầu hỗ trợ', 'Đội cứu hộ địa phương'];
 
+  Widget handleIcon() {
+    return GestureDetector(
+        child: Image.asset('lib/assets/images/iconsCreateRequire/sent.png',
+            fit: BoxFit.fill, height: 25),
+        onTap: () {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       resizeToAvoidBottomPadding: false,
-      appBar: GradientAppBar(title: title[_currentIndex]),
+      appBar: _currentIndex == 0
+          ? GradientAppBar(title: title[0], handleIcon: handleIcon())
+          : GradientAppBar(title: title[1]),
       body: screen[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
