@@ -34,6 +34,9 @@ class _CreateRequireScreenState extends State<CreateRequireScreen> {
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 25),
         child: SingleChildScrollView(
+          reverse: true,
+          padding:
+              EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
           child: Column(children: [
             SizedBox(height: 30),
             FormInput(
@@ -106,8 +109,7 @@ class _CreateRequireScreenState extends State<CreateRequireScreen> {
                   ),
                 ),
               ),
-            )),
-            Padding(padding: EdgeInsets.only(bottom: 100))
+            ))
           ]),
         ));
   }
