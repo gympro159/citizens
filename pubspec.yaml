@@ -54,6 +54,7 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - lib/assets/images/brand.png
+    - lib/assets/images/iconsHome/notification.png
     - lib/assets/images/iconsHome/camera.png
     - lib/assets/images/iconsHome/danger.png
     - lib/assets/images/iconsHome/hot-line.png
@@ -78,6 +79,7 @@ flutter:
     - lib/assets/images/iconsWarningInfo/icon_7.png
     - lib/assets/images/iconsWarningInfo/icon_8.png
     - lib/assets/images/iconsWarningInfo/time.png
+    - lib/assets/images/iconsCreateRequire/gpsHere.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

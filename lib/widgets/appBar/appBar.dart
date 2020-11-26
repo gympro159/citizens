@@ -31,20 +31,10 @@ class GradientAppBarHome extends StatelessWidget
                     fontWeight: FontWeight.bold)),
             GestureDetector(
                 onTap: () {},
-                child: Stack(children: [
-                  Icon(
-                    Icons.notifications,
-                    color: Colors.white,
-                    size: 35.0,
-                  ),
-                  Positioned(
-                    // draw a red marble
-                    top: 3.0,
-                    right: 3.0,
-                    child: new Icon(Icons.brightness_1,
-                        size: 14.0, color: Colors.redAccent),
-                  )
-                ])),
+                child: Image.asset(
+                    'lib/assets/images/iconsHome/notification.png',
+                    fit: BoxFit.fill,
+                    height: 28)),
           ],
         ),
         flexibleSpace: Container(

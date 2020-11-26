@@ -35,8 +35,9 @@ class ButtonElement extends StatelessWidget {
                             tileMode: TileMode.clamp),
                         borderRadius: BorderRadius.circular(10)),
                     child: Container(
-                      child: Image.asset(imageButtons),
-                      constraints: BoxConstraints(maxWidth: 40, maxHeight: 40),
+                      child: Image.asset(imageButtons,
+                          height: 35, fit: BoxFit.fill),
+                      constraints: BoxConstraints(maxWidth: 45, maxHeight: 45),
                       alignment: Alignment.center,
                     )),
                 Padding(padding: const EdgeInsets.only(top: 5)),

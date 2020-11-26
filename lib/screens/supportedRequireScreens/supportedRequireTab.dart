@@ -20,6 +20,7 @@ class _SupportedRequireTabState extends State<SupportedRequireTab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       appBar: GradientAppBar(title: title[_currentIndex]),
       body: screen[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(

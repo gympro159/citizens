@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 
 class WarningInfoCard extends StatelessWidget {
   const WarningInfoCard(
-      {Key key, @required this.warninginfoFilter, @required this.index})
+      {Key key, @required this.warninginfoRender, @required this.index})
       : super(key: key);
 
-  final List warninginfoFilter;
+  final List warninginfoRender;
   final int index;
 
   @override
@@ -17,7 +17,7 @@ class WarningInfoCard extends StatelessWidget {
             context,
             MaterialPageRoute(
                 builder: (context) => WarningInfoDetailScreen(
-                    warningInfoDetail: warninginfoFilter[index])));
+                    warningInfoDetail: warninginfoRender[index])));
       },
       child: Container(
           margin: EdgeInsets.only(top: 3),
@@ -41,7 +41,7 @@ class WarningInfoCard extends StatelessWidget {
                             borderRadius: BorderRadius.circular(12)),
                         child: Container(
                           child: Image.asset(
-                            'lib/assets/images/iconsWarningInfo/icon_${warninginfoFilter[index]["type"]["idType"]}.png',
+                            'lib/assets/images/iconsWarningInfo/icon_${warninginfoRender[index]["type"]["idType"]}.png',
                             fit: BoxFit.fill,
                             height: 30,
                           ),
@@ -55,13 +55,13 @@ class WarningInfoCard extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                              '${warninginfoFilter[index]["type"]["nameType"]}',
+                              '${warninginfoRender[index]["type"]["nameType"]}',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 20)),
                           Padding(
                               padding: const EdgeInsets.only(top: 5.0),
                               child: Text(
-                                  '${warninginfoFilter[index]["title"]}',
+                                  '${warninginfoRender[index]["title"]}',
                                   style: TextStyle(fontSize: 17))),
                         ]),
                   ),
@@ -79,7 +79,7 @@ class WarningInfoCard extends StatelessWidget {
                       Image.asset('lib/assets/images/iconsWarningInfo/time.png',
                           fit: BoxFit.fill, height: 20),
                       SizedBox(width: 10),
-                      Text('${warninginfoFilter[index]["time"]}',
+                      Text('${warninginfoRender[index]["time"]}',
                           style: TextStyle(
                               color: Color(0xff4d4c4c), fontSize: 17)),
                       SizedBox(width: 45)
