@@ -91,35 +91,46 @@ class GradientAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new AppBar(
-        centerTitle: true,
-        title: this.handleIcon == null
-            ? Text(title,
-                style: TextStyle(
-                    fontSize: 20.0,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold))
-            : Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  SizedBox(),
-                  Text(title,
-                      style: TextStyle(
-                          fontSize: 20.0,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold)),
-                  handleIcon
-                ],
-              ),
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [Color(blueColor), Color(greenColor)],
-                begin: const FractionalOffset(0.0, 0.0),
-                end: const FractionalOffset(0.9, 0.0),
-                stops: [0.0, 1.0],
-                tileMode: TileMode.clamp),
+    return PreferredSize(
+      preferredSize: Size.fromHeight(200.0),
+      child: AppBar(
+          automaticallyImplyLeading: false, // hides leading widget
+          leading: IconButton(
+            icon: Padding(
+              padding: const EdgeInsets.only(left: 15.0),
+              child: Icon(Icons.arrow_back_ios, color: Colors.white),
+            ),
+            onPressed: () => Navigator.of(context).pop(),
           ),
-        ));
+          centerTitle: true,
+          title: this.handleIcon == null
+              ? Text(title,
+                  style: TextStyle(
+                      fontSize: 20.0,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold))
+              : Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    SizedBox(),
+                    Text(title,
+                        style: TextStyle(
+                            fontSize: 20.0,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold)),
+                    handleIcon
+                  ],
+                ),
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  colors: [Color(blueColor), Color(greenColor)],
+                  begin: const FractionalOffset(0.0, 0.0),
+                  end: const FractionalOffset(0.9, 0.0),
+                  stops: [0.0, 1.0],
+                  tileMode: TileMode.clamp),
+            ),
+          )),
+    );
   }
 }

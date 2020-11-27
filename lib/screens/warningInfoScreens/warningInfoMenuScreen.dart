@@ -95,7 +95,7 @@ class _WarningInfoMenuScreenState extends State<WarningInfoMenuScreen>
     return Scaffold(
         appBar: GradientAppBar(title: widget.title, handleIcon: handleIcon()),
         body: Padding(
-            padding: EdgeInsets.only(top: 10),
+            padding: EdgeInsets.only(top: 0),
             child: warninginfoRender == null
                 ? ShimmerLoading()
                 : RefreshIndicator(
@@ -111,8 +111,8 @@ class _WarningInfoMenuScreenState extends State<WarningInfoMenuScreen>
                                 ? Column(
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 30.0),
+                                        padding: const EdgeInsets.fromLTRB(
+                                            30.0, 10, 30.0, 0),
                                         child: Row(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
@@ -245,7 +245,7 @@ class _WarningInfoMenuScreenState extends State<WarningInfoMenuScreen>
                               itemCount: warninginfoRender.length,
                               itemBuilder: (BuildContext context, int index) {
                                 return AnimatedSize(
-                                  duration: Duration(milliseconds: 500),
+                                  duration: Duration(milliseconds: 1000),
                                   curve: Curves.fastOutSlowIn,
                                   vsync: this,
                                   child: WarningInfoCard(

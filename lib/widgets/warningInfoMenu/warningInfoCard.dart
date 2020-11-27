@@ -20,9 +20,11 @@ class WarningInfoCard extends StatelessWidget {
                     warningInfoDetail: warninginfoRender[index])));
       },
       child: Container(
-          margin: EdgeInsets.only(top: 3),
+          margin: EdgeInsets.only(top: 0),
           padding: EdgeInsets.only(top: 25),
-          color: index % 3 == 2 ? Color(0x26FF7A7A) : Colors.white,
+          color: warninginfoRender[index]["seen"] == false
+              ? Color(0x26FF7A7A)
+              : Colors.white,
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 18),
             child: Column(
@@ -65,11 +67,13 @@ class WarningInfoCard extends StatelessWidget {
                                   style: TextStyle(fontSize: 17))),
                         ]),
                   ),
-                  Icon(
-                    Icons.error,
-                    color: Colors.red,
-                    size: 30,
-                  )
+                  warninginfoRender[index]["rate"]["idRate"] == "1"
+                      ? Icon(
+                          Icons.error,
+                          color: Colors.red,
+                          size: 30,
+                        )
+                      : SizedBox(width: 30)
                 ]),
                 SizedBox(height: 20),
                 Row(
