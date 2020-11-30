@@ -8,12 +8,17 @@ class ShimmerLoading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        itemCount: 5,
-        itemBuilder: (BuildContext context, int index) {
-          return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: Shimmer.fromColors(
+    return Padding(
+      padding: const EdgeInsets.only(top: 25.0),
+      child: ListView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: 7,
+          itemBuilder: (BuildContext context, int index) {
+            return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: Shimmer.fromColors(
+                  baseColor: Colors.grey[350],
+                  highlightColor: Colors.white,
                   child: Container(
                     margin: EdgeInsets.symmetric(vertical: 7.5),
                     child: Column(
@@ -27,7 +32,7 @@ class ShimmerLoading extends StatelessWidget {
                                 width: 40,
                                 height: 40,
                                 decoration: BoxDecoration(
-                                    color: Colors.grey[500],
+                                    color: Colors.grey[350],
                                     borderRadius: BorderRadius.circular(7)),
                               ),
                             ),
@@ -37,9 +42,9 @@ class ShimmerLoading extends StatelessWidget {
                                   children: [
                                     Container(
                                         width: 90,
-                                        height: 25,
+                                        height: 15,
                                         decoration: BoxDecoration(
-                                            color: Colors.grey[500],
+                                            color: Colors.grey[350],
                                             borderRadius:
                                                 BorderRadius.circular(10))),
                                     Padding(
@@ -47,7 +52,7 @@ class ShimmerLoading extends StatelessWidget {
                                       child: Container(
                                           height: 40,
                                           decoration: BoxDecoration(
-                                              color: Colors.grey[500],
+                                              color: Colors.grey[350],
                                               borderRadius:
                                                   BorderRadius.circular(10))),
                                     ),
@@ -59,7 +64,7 @@ class ShimmerLoading extends StatelessWidget {
                                   width: 20,
                                   height: 20,
                                   decoration: BoxDecoration(
-                                      color: Colors.grey[500],
+                                      color: Colors.grey[350],
                                       borderRadius: BorderRadius.circular(20))),
                             )
                           ],
@@ -70,25 +75,25 @@ class ShimmerLoading extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
-                                  width: 19,
-                                  height: 19,
+                                  width: 15,
+                                  height: 15,
                                   decoration: BoxDecoration(
-                                      color: Colors.grey[500],
-                                      borderRadius: BorderRadius.circular(19))),
+                                      color: Colors.grey[350],
+                                      borderRadius: BorderRadius.circular(15))),
                               SizedBox(width: 10),
                               Container(
                                   width: 80,
-                                  height: 15,
+                                  height: 10,
                                   decoration: BoxDecoration(
-                                      color: Colors.grey[500],
+                                      color: Colors.grey[350],
                                       borderRadius: BorderRadius.circular(4))),
                               SizedBox(width: 45)
                             ])
                       ],
                     ),
                   ),
-                  baseColor: Colors.grey[500],
-                  highlightColor: Colors.white));
-        });
+                ));
+          }),
+    );
   }
 }

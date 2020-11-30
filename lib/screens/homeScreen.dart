@@ -1,7 +1,7 @@
 import 'package:citizens/screens/digitalMapScreen/digitalMapScreen.dart';
 import 'package:citizens/screens/publicCameraScreen/publicCameraScreen.dart';
-import 'package:citizens/screens/reactPhenomena/reactPhenomenaScreen.dart';
-import 'package:citizens/screens/verifyNews/verifyNewsScreen.dart';
+import 'package:citizens/screens/reactPhenomenaScreens/reactPhenomenaScreen.dart';
+import 'package:citizens/screens/verifyNewsScreens/verifyNewsScreen.dart';
 import 'package:citizens/screens/warningInfoScreens/warningInfoMenuScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';

@@ -28,15 +28,15 @@ class ButtonElement extends StatelessWidget {
                 Ink(
                     decoration: BoxDecoration(
                         gradient: LinearGradient(
-                            colors: [Color(0xff01A8A1), Color(0xff6ECC54)],
-                            begin: const FractionalOffset(0.5, 0.0),
-                            end: const FractionalOffset(0.5, 1.0),
+                            colors: [Color(0xff01A8A1), Color(0xff54cc82)],
+                            begin: const FractionalOffset(0.5, 1.0),
+                            end: const FractionalOffset(0.5, 0.0),
                             stops: [0.0, 1.0],
                             tileMode: TileMode.clamp),
                         borderRadius: BorderRadius.circular(10)),
                     child: Container(
                       child: Image.asset(imageButtons,
-                          height: 35, fit: BoxFit.fill),
+                          height: 32, fit: BoxFit.fill),
                       constraints: BoxConstraints(maxWidth: 45, maxHeight: 45),
                       alignment: Alignment.center,
                     )),

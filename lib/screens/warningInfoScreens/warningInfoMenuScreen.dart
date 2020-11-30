@@ -11,7 +11,6 @@ class WarningInfoMenuScreen extends StatefulWidget {
 
   @override
   _WarningInfoMenuScreenState createState() {
-    print('createState');
     return _WarningInfoMenuScreenState();
   }
 }
@@ -40,8 +39,6 @@ class _WarningInfoMenuScreenState extends State<WarningInfoMenuScreen>
 
   @override
   void initState() {
-    print('mounted: $mounted');
-    print('initState');
     super.initState();
     callApi('warninginfo').then((value) => {
           setState(() {
@@ -57,6 +54,9 @@ class _WarningInfoMenuScreenState extends State<WarningInfoMenuScreen>
   }
 
   Future<dynamic> handleRefresh() {
+    setState(() {
+      warninginfoRender = null;
+    });
     return callApi('warninginfo').then((value) => {
           setState(() {
             warninginfo = value;
@@ -67,33 +67,11 @@ class _WarningInfoMenuScreenState extends State<WarningInfoMenuScreen>
   }
 
   @override
-  void didChangeDependencies() {
-    print('didDependencies');
-    super.didChangeDependencies();
-  }
-
-  @override
-  void didUpdateWidget(WarningInfoMenuScreen oldWidget) {
-    print('didUpdateWidget');
-    super.didUpdateWidget(oldWidget);
-  }
-
-  void deactivate() {
-    print('deactivate');
-    super.deactivate();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    print('dispose');
-  }
-
-  @override
   Widget build(BuildContext context) {
-    print('build');
     return Scaffold(
-        appBar: GradientAppBar(title: widget.title, handleIcon: handleIcon()),
+        appBar: GradientAppBar(
+            title: widget.title,
+            handleIcon: warninginfoRender == null ? SizedBox() : handleIcon()),
         body: Padding(
             padding: EdgeInsets.only(top: 0),
             child: warninginfoRender == null

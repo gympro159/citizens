@@ -1,5 +1,7 @@
 import 'package:citizens/screens/warningInfoScreens/warningInfoDetailScreen.dart';
+import 'package:citizens/utils/apiCaller.dart';
 import 'package:flutter/material.dart';
+import 'dart:convert';
 
 class WarningInfoCard extends StatelessWidget {
   const WarningInfoCard(
@@ -13,6 +15,13 @@ class WarningInfoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        if (warninginfoRender[index]["seen"] == false) {
+          var header = {"Content-Type": "application/json"};
+          var warninginfoTemp = warninginfoRender[index];
+          warninginfoTemp["seen"] = true;
+          //print(jsonEncode(warninginfoTemp));
+          callApi('warninginfo', 'PUT', header, warninginfoTemp);
+        }
         Navigator.push(
             context,
             MaterialPageRoute(

@@ -4,7 +4,7 @@ class GradientAppBarHome extends StatelessWidget
     implements PreferredSizeWidget {
   GradientAppBarHome({this.title});
   final String title;
-  final double barHeight = 50.0;
+  final double barHeight = 60.0;
   final int blueColor = 0xff01A8A1, greenColor = 0xff6ECC54;
 
   @override
@@ -13,7 +13,7 @@ class GradientAppBarHome extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return new AppBar(
-        centerTitle: true,
+        // centerTitle: true,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -54,11 +54,14 @@ class GradientAppBarHome extends StatelessWidget
                             ))
                       ],
                     ))),
-            Text(title,
-                style: TextStyle(
-                    fontSize: 20.0,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold)),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20.0),
+              child: Text(title,
+                  style: TextStyle(
+                      fontSize: 22.0,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold)),
+            ),
             GestureDetector(
                 onTap: () {},
                 child: Image.asset(
@@ -83,7 +86,7 @@ class GradientAppBarHome extends StatelessWidget
 class GradientAppBar extends StatelessWidget implements PreferredSizeWidget {
   GradientAppBar({this.title, this.handleIcon});
   final String title;
-  final double barHeight = 50.0;
+  final double barHeight = 60.0;
   final int blueColor = 0xff01A8A1, greenColor = 0xff6ECC54;
   final Widget handleIcon;
   @override
@@ -91,46 +94,43 @@ class GradientAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PreferredSize(
-      preferredSize: Size.fromHeight(200.0),
-      child: AppBar(
-          automaticallyImplyLeading: false, // hides leading widget
-          leading: IconButton(
-            icon: Padding(
-              padding: const EdgeInsets.only(left: 15.0),
-              child: Icon(Icons.arrow_back_ios, color: Colors.white),
-            ),
-            onPressed: () => Navigator.of(context).pop(),
+    return AppBar(
+        automaticallyImplyLeading: false, // hides leading widget
+        leading: IconButton(
+          icon: Padding(
+            padding: const EdgeInsets.only(left: 15.0),
+            child: Icon(Icons.arrow_back_ios, color: Colors.white),
           ),
-          centerTitle: true,
-          title: this.handleIcon == null
-              ? Text(title,
-                  style: TextStyle(
-                      fontSize: 20.0,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold))
-              : Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    SizedBox(),
-                    Text(title,
-                        style: TextStyle(
-                            fontSize: 20.0,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold)),
-                    handleIcon
-                  ],
-                ),
-          flexibleSpace: Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  colors: [Color(blueColor), Color(greenColor)],
-                  begin: const FractionalOffset(0.0, 0.0),
-                  end: const FractionalOffset(0.9, 0.0),
-                  stops: [0.0, 1.0],
-                  tileMode: TileMode.clamp),
-            ),
-          )),
-    );
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        centerTitle: true,
+        title: this.handleIcon == null
+            ? Text(title,
+                style: TextStyle(
+                    fontSize: 22.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold))
+            : Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  SizedBox(),
+                  Text(title,
+                      style: TextStyle(
+                          fontSize: 22.0,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold)),
+                  handleIcon
+                ],
+              ),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+                colors: [Color(blueColor), Color(greenColor)],
+                begin: const FractionalOffset(0.0, 0.0),
+                end: const FractionalOffset(0.9, 0.0),
+                stops: [0.0, 1.0],
+                tileMode: TileMode.clamp),
+          ),
+        ));
   }
 }
